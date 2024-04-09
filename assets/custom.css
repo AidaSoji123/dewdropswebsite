@@ -1,5 +1,5 @@
 *{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Arial, sans-serif, sans-serif;
+    font-family: 'Times New Roman';
   }
 @keyframes animatedBackground {
       from {
@@ -13,7 +13,7 @@
         scroll-behavior: smooth;
     }
     .header{
-  background-image: url('./imgs/bg1.JPG');
+  background-image: url('./imgs/./bg2.JPG');
   height:100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,6 +28,15 @@
 
 }
 /*Whatapp Button Lower*/
+
+/*instagram Button Lower*/
+.instagramBox{
+  position:absolute;
+  bottom:40%;
+  right:0;
+
+}
+/*instagram Button Lower*/
 .navbar-scrolled{
   background-color: #fff;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
