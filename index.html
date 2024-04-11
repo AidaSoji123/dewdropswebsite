@@ -59,7 +59,12 @@
             class="navbar navbar-expand-lg navbar-light bg-light mt-3 sticky-top mb-5"
           >
             <a class="navbar-brand" href="#"
-              ><img src="./assets/imgs/./logo11.png" width="70px" height="70px" class="img-fluid  ms-4"/></a>
+              ><img
+                src="./assets/imgs/./logo11.png"
+                width="70px"
+                height="70px"
+                class="img-fluid ms-4"
+            /></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -72,7 +77,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse me-5 " id="navbarTogglerDemo02">
+            <div class="collapse navbar-collapse me-5" id="navbarTogglerDemo02">
               <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                   <a class="nav-link fw-bold" href="#home">Home</a>
@@ -91,24 +96,30 @@
                     data-bs-target="#exampleModal"
                   >
                     Enquiry
-                </a>
+                  </a>
                 </li>
               </ul>
             </div>
           </nav>
           <!--Pasted-->
           <div class="col-8 col-md-6 rounded card mt-5" id="home">
-            <p class="text-center">
-               </p>
+            <p class="text-center"></p>
             <h1
               class="text-center display-6 bg-white font-weight-bold"
               style="color: #111; letter-spacing: 0.08em"
             >
-              <img src="./assets/imgs/dewletter.png" id="img-letter" height="60px" class="pb-0" />
+              <img
+                src="./assets/imgs/dewletter.png"
+                id="img-letter"
+                height="60px"
+                class="pb-0"
+              />
             </h1>
-           
-            <center><em style="color: rgb(39, 109, 6);">Crafting ideal moments..!</em></center>
-            <p class="lead px-1 py-2 " style="color: rgb(172, 57, 28);">
+
+            <center>
+              <em style="color: rgb(39, 109, 6)">Crafting ideal moments..!</em>
+            </center>
+            <p class="lead px-1 py-2" style="color: rgb(172, 57, 28)">
               A premier catering and event planning company in calicut since
               2008. <br />
               Memorable events don't just happen. They happened to be our
@@ -144,7 +155,6 @@
           <div class="modal-body">
             <form method="post">
               <div class="row">
-                
                 <div class="form-group col-10 offset-1">
                   <label for="name">Name:</label>
                   <input
@@ -257,7 +267,9 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">submit</button>
+            <button type="button" class="btn btn-primary" id="submit">
+              submit
+            </button>
           </div>
         </div>
       </div>
@@ -268,11 +280,13 @@
     <div class="container-fluid services">
       <div class="row align-items-center">
         <div class="col-12 col-md-6">
-         <center> <img
-            src="./assets/imgs/./deccor.jpg"
-            class="img-fluid rounded  mt-3 mb-3"
-            style="width: 500px; height: 500px"
-          /></center>
+          <center>
+            <img
+              src="./assets/imgs/./deccor.jpg"
+              class="img-fluid rounded mt-3 mb-3"
+              style="width: 500px; height: 500px"
+            />
+          </center>
         </div>
         <div class="col-12 col-md-6 mt-4" style="min-height: 350px">
           <h6 class="display-6 text-warning text-center mt-4" id="about">
@@ -328,7 +342,8 @@
           <div class="col-12 col-md-6 mt-lg-4" style="min-height: 350px">
             <h4 class="display-6 text-dark text-center mt-5">EVENTS</h4>
             <p class="text-center">
-              "Elevating ordinary occasions to extraordinary celebrations." <br>
+              "Elevating ordinary occasions to extraordinary celebrations."
+              <br />
               "Crafting events that are as clever as they are memorable
               Transform your event into a captivating masterpiece with our
               expert decoration services. Our seasoned team of decorators brings
@@ -403,5 +418,52 @@
         }
       });
     </script>
+
+    <!-- //-----------firebase connection------------------// -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+      } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcZgorQnx2iZI2wL8JrfFvvX6qAI2Gr-s",
+      authDomain: "dewdropsevents-cbdbb.firebaseapp.com",
+      projectId: "dewdropsevents-cbdbb",
+      storageBucket: "dewdropsevents-cbdbb.appspot.com",
+      messagingSenderId: "538915668998",
+      appId: "1:538915668998:web:b33e27de6100b4ef192f87",
+    };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+      // get ref to database services
+      const db = getDatabase(app);
+      document.getElementById("submit").addEventListener("click", function (e) {
+        set(ref(db, "user/" + document.getElementById("name").value), {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          date: document.getElementById("date").value,
+          time: document.getElementById("time").value,
+          event: document.getElementById("event-type").value,
+          venue: document.getElementById("venue").value,
+          guests: document.getElementById("guests").value,
+          message: document.getElementById("message").value,
+        });
+        alert("submited");
+      });
+    </script>
+<!-- firebase id:- https://dewdropsevents-cbdbb-default-rtdb.firebaseio.com/ -->
+
+    
   </body>
 </html>
