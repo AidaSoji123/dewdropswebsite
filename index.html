@@ -35,6 +35,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="whatsappBox">
@@ -55,38 +60,39 @@
       <div class="container">
         <div class="row">
           <!--Pasted-->
-          <nav
+                 <nav
             class="navbar navbar-expand-lg navbar-light bg-light mt-3 sticky-top mb-5"
           >
-            <a class="navbar-brand" href="#"
-              ><img
-                src="./assets/imgs/./logo11.png"
+            <a class="navbar-brand" href="#">
+              <img
+                src="./assets/imgs/logo11.png"
                 width="70px"
                 height="70px"
                 class="img-fluid ms-4"
-            /></a>
+                alt="Logo"
+              />
+            </a>
             <button
               class="navbar-toggler"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarTogglerDemo02"
+              data-toggle="collapse"
+              data-target="#navbarTogglerDemo02"
               aria-controls="navbarTogglerDemo02"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse me-5" id="navbarTogglerDemo02">
               <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                  <a class="nav-link fw-bold" href="#home">Home</a>
+                  <a class="nav-link fw-bold me-2" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fw-bold" href="#about">About</a>
+                  <a class="nav-link fw-bold me-2" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fw-bold" href="#contact">Contact</a>
+                  <a class="nav-link fw-bold me-2" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item fw-bold">
                   <a
@@ -97,10 +103,12 @@
                   >
                     Enquiry
                   </a>
+                  <!-- <a class="btn btn-dark text-white px-3 ms-2" type="button" data-toggle="modal" data-target="#exampleModal">Enquiry</a> -->
                 </li>
               </ul>
             </div>
           </nav>
+
           <!--Pasted-->
           <div class="col-8 col-md-6 rounded card mt-5" id="home">
             <p class="text-center"></p>
@@ -311,9 +319,9 @@
     <!--Proaudio-->
     <div class="container-fluid" style="background-color: #bacad9">
       <div class="container">
-        <div class="row ">
-          
-          <div class="col-12 col-md-6 mt-lg-4" style="min-height: 350px"><br>
+        <div class="row">
+          <div class="col-12 col-md-6 mt-lg-4" style="min-height: 350px">
+            <br />
             <h4 class="display-6 text-dark text-center mt-5">CATERING</h4>
             <p class="text-center">
               “Unleashing a symphony of flavors on your palate” <br />
@@ -356,7 +364,7 @@
             <img
               src="./assets/imgs/panthal.jpeg"
               class="img-fluid rounded mt-3 mb-3"
-              style="max-width: 100%; height: 400px; width:100%"
+              style="max-width: 100%; height: 400px; width: 100%"
             />
           </div>
         </div>
@@ -393,7 +401,7 @@
             <h4 class="text-white text-center mt-5">Follow Us</h4>
             <p class="text-center">
               <a href="https://www.instagram.com/dew_drops_event_planners"
-                ><i class="fa-brands fa-instagram display-6 text-white m-2 "></i
+                ><i class="fa-brands fa-instagram display-6 text-white m-2"></i
               ></a>
               <a href="https://www.facebook.com/jinju.joseph.35?mibextid=ZbWKwL"
                 ><i class="fa-brands fa-facebook display-6 text-white m-2"></i
@@ -411,11 +419,19 @@
     </div>
     <!--Footer Menu-->
 
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
       var navE1 = document.querySelector(".navbar");
       window.addEventListener("scroll", () => {
-        if (window.screenY >= 20) {
+        if (window.pageYOffset >= 20) {
           navE1.classList.add("navbar-scrolled");
+        } else {
+          navE1.classList.remove("navbar-scrolled");
         }
       });
     </script>
@@ -433,18 +449,18 @@
         child,
       } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyCcZgorQnx2iZI2wL8JrfFvvX6qAI2Gr-s",
-      authDomain: "dewdropsevents-cbdbb.firebaseapp.com",
-      projectId: "dewdropsevents-cbdbb",
-      storageBucket: "dewdropsevents-cbdbb.appspot.com",
-      messagingSenderId: "538915668998",
-      appId: "1:538915668998:web:b33e27de6100b4ef192f87",
-    };
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcZgorQnx2iZI2wL8JrfFvvX6qAI2Gr-s",
+        authDomain: "dewdropsevents-cbdbb.firebaseapp.com",
+        projectId: "dewdropsevents-cbdbb",
+        storageBucket: "dewdropsevents-cbdbb.appspot.com",
+        messagingSenderId: "538915668998",
+        appId: "1:538915668998:web:b33e27de6100b4ef192f87",
+      };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
 
       // get ref to database services
       const db = getDatabase(app);
@@ -463,28 +479,26 @@
         alert("submited");
       });
     </script>
-<!-- firebase id:- https://dewdropsevents-cbdbb-default-rtdb.firebaseio.com/ -->
-
-
-
+    <!-- firebase id:- https://dewdropsevents-cbdbb-default-rtdb.firebaseio.com/ -->
 
     <!-- email connection -->
 
-    
     <script>
-      document.getElementById('submitForm').addEventListener('click', function() {
-        var form = document.getElementById('enquiryForm');
-        var formData = new FormData(form);
-        var mailtoLink = 'mailto:dewdropseventplanners01@gmail.com';
-        mailtoLink += '?subject=Enquiry&body=';
-  
-        formData.forEach(function(value, key) {
-          mailtoLink += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '%0A';
+      document
+        .getElementById("submitForm")
+        .addEventListener("click", function () {
+          var form = document.getElementById("enquiryForm");
+          var formData = new FormData(form);
+          var mailtoLink = "mailto:dewdropseventplanners01@gmail.com";
+          mailtoLink += "?subject=Enquiry&body=";
+
+          formData.forEach(function (value, key) {
+            mailtoLink +=
+              encodeURIComponent(key) + "=" + encodeURIComponent(value) + "%0A";
+          });
+
+          window.location.href = mailtoLink;
         });
-  
-        window.location.href = mailtoLink;
-      });
     </script>
-    
   </body>
 </html>
